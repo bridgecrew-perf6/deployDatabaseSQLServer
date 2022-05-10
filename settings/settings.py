@@ -112,16 +112,19 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
+os.environ["ODBCSYSINI"] = "/home/pkleiz/deployDatabaseSQLServer"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-conn = pyodbc.connect(
-    Driver = "ODBC Driver 17 for SQL Server",
-    Server = "10.0.64.18",
-    Database = "Data_t",
-    UID = "sa",
-    PWD = "wjMyEkEx62VwIQYsqZImwrZU2KDMi3",
-    Port = 1433
-)
+conn = pyodbc.connect('DSN=sqlserverdatasource;Uid=sa;Database=Data_t;Pwd=wjMyEkEx62VwIQYsqZImwrZU2KDMi3;Encrypt=yes;Connection Timeout=30;')
+# a = [                  
+#     Driver = "ODBC Driver 17 for SQL Server",
+#     Server = "10.0.64.18",
+#     Database = "Data_t",
+#     UID = "sa",
+#     PWD = "wjMyEkEx62VwIQYsqZImwrZU2KDMi3",
+#     Port = 1433
+# ]
