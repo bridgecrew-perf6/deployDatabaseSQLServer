@@ -6,7 +6,7 @@ def home(request):
     
     cursor=conn.cursor()
     
-    cursor.execute('SELECT [MessageText] FROM [Data_t].[dbo].[connectSuccess]')
+    cursor.execute('SELECT [MessageStatus] FROM [sql10491427].[connectSuccess]')
     
     message = cursor.fetchall()
     
