@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block scripts %}
+    <script src="{% static 'connectionSQL/js/main.js' %}"></script>
+    <link
+    rel="stylesheet"
+    href="{% static 'connectionSQL/css/style.css' %}"
+  />
+{% endblock %}
+
+{% block main %}
+<div id="hover">
+    {% for i in message %}
+        {{ i }}
+    {% endfor %}
+    {% endblock %}
+</div>
+
